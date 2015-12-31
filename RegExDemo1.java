@@ -9,8 +9,9 @@ public class RegExDemo1 {
 	public static void main(String[] args) {
 		RegExDemo1 textObject = new RegExDemo1();
 		List<String> tokens = new ArrayList<>();
-		textObject.text = new String("Hello hello?");
-		tokens = textObject.getTokens("e");
+		textObject.text = new String("Splitting a string, it's as easy as 1 2 33!  Right?");
+		//Two reg exp  side by side
+		tokens = textObject.getTokens("it");
 		if(tokens != null){
 			System.out.println(tokens.toString());;
 		}

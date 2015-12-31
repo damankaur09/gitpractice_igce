@@ -1,22 +1,29 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class RegExDemo1 {
-
+	public String text;
 	public static void main(String[] args) {
-		Pattern expression = Pattern.compile("J.*\\d[0-35-9]-\\d\\d-\\d\\d");
-		String s1 = "Jane's Birthday is 05-12-75\n" +
-					"Dave's Birthday is 11-04-68\n" +
-					"John's Birthday is 04-28-73\n" +
-					"Joe's Birthday is 12-17-77";
-		
-		Matcher matcher = expression.matcher(s1);
-		
-		while (matcher.find()) {
-			System.out.println(matcher.group());
+		RegExDemo1 textObject = new RegExDemo1();
+		List<String> tokens = new ArrayList<>();
+		textObject.text = new String("Hello hello?");
+		tokens = textObject.getTokens("e");
+		if(tokens != null){
+			System.out.println(tokens.toString());;
 		}
+	}
+	
+	public List<String> getTokens(String pattern){
+		Pattern regularExp = Pattern.compile(pattern);
+		Matcher matcher = regularExp.matcher(text);
+		List<String> tokensList = new ArrayList<>();
+		while (matcher.find()) {
+			tokensList.add(matcher.group());
+		}
+		return tokensList;
 	}
 
 }

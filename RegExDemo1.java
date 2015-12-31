@@ -10,8 +10,8 @@ public class RegExDemo1 {
 		RegExDemo1 textObject = new RegExDemo1();
 		List<String> tokens = new ArrayList<>();
 		textObject.text = new String("Splitting a string, it's as easy as 1 2 33!  Right?");
-		//Character classes
-		tokens = textObject.getTokens("[123]");
+		//Character classes with Negation
+		tokens = textObject.getTokens("[^a-z123 ]");
 		if(tokens != null){
 			System.out.println(tokens.toString());;
 		}

@@ -10,8 +10,8 @@ public class RegExDemo1 {
 		RegExDemo1 textObject = new RegExDemo1();
 		List<String> tokens = new ArrayList<>();
 		int numOfSyllables = 0;
-		textObject.text = new String("We promptly judged antique ivory buckles for the next prize");
-		tokens = textObject.getTokens("[a-zA-Z]");
+		textObject.text = new String("This is a test.  How many???  Senteeeeeeeeeences are here... there should be 5!  Right?");
+		tokens = textObject.getTokens("[yaeiou]+");
 		
 		if(tokens != null){
 			System.out.println(tokens.toString()+"\ncount : " + tokens.size());;
